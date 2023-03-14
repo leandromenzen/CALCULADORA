@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora Menzen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #calculadora {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #visor {
+            width: 100%;
+            height: 60px;
+            font-size: 36px;
+            text-align: right;
+            padding: 5px;
+            margin-bottom: 20px;
+            border: none;
+            background-color: #fff;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            width: 75px;
+            height: 75px;
+            margin: 5px;
+            font-size: 28px;
+            text-align: center;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.5s;
+        }
+
+        .btn:hover {
+            background-color: #11f976;
+        }
+
+        .btn.limpar {
+            background-color: #f44336;
+        }
+
+        .btn.igual {
+            background-color: #f0ad4e;
+            width: 150px;
+            height: 75px;
+        }
+
+        .btn.zero {
+            width: 155px;
+        }
+
+        .btn.sinais {
+            background-color: #005ad8;
+        }
+
+    </style>
+    <script>
+        function calcular() {
+            var visor = document.getElementById("visor");
+            var resultado = eval(visor.value);
+            visor.value = resultado;
+        }
+
+        function inserirNumero(valor) {
+            var visor = document.getElementById("visor");
+            visor.value += valor;
+        }
+
+        function limparVisor() {
+            var visor = document.getElementById("visor");
+            visor.value = "";
+        }
+    </script>
+    
+</head>
+<body>
+    <h1>CALCULADORA MENZEN</h1>
+    <hr>
+
+    <div id="calculadora">
+        <input type="text" id="visor" readonly>
+
+        <div>
+            <button class="btn" onclick="inserirNumero('7')">7</button>
+            <button class="btn" onclick="inserirNumero('8')">8</button>
+            <button class="btn" onclick="inserirNumero('9')">9</button>
+            <button class="btn sinais" onclick="inserirNumero('/')">/</button>
+        </div>
+        <div>
+            <button class="btn" onclick="inserirNumero('4')">4</button>
+            <button class="btn" onclick="inserirNumero('5')">5</button>
+            <button class="btn" onclick="inserirNumero('6')">6</button>
+            <button class="btn sinais" onclick="inserirNumero('*')">*</button>
+        </div>
+        <div>
+            <button class="btn" onclick="inserirNumero('1')">1</button>
+            <button class="btn"
+            onclick="inserirNumero('2')">2</button>
+            <button class="btn" onclick="inserirNumero('3')">3</button>
+            <button class="btn sinais" onclick="inserirNumero('-')">-</button>
+            </div>
+            <div>
+            <button class="btn zero" onclick="inserirNumero('0')">0</button>
+            <button class="btn" onclick="inserirNumero('.')">.</button>
+            <button class="btn sinais" onclick="inserirNumero('+')">+</button>
+            <button class="btn igual" onclick="calcular()">=</button>
+            
+            </div>
+            <div>
+            <button class="btn limpar" onclick="limparVisor()">C</button>
+            </div>
+            </div>
+            
+            </body>
+            </html>
